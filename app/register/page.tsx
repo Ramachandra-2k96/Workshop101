@@ -1,16 +1,20 @@
-"use client"
+"use client";
 import { useState, useEffect } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
-import Lottie from "lottie-react"
 import registrationAnimation from "../../public/registration.json"
 import successAnimation from "../../public/success.json"
 import { motion } from "framer-motion"
+import dynamic from 'next/dynamic'
 
 const usnRegex = /^[0-9][A-Z]{2}[0-9]{2}[A-Z]{2}[0-9]{3}$/
 const emailRegex = /^[a-zA-Z0-9._%+-]+@sode-edu\.in$/
 
+const Lottie = dynamic(() => import("lottie-react"), {
+  ssr: false,
+  loading: () => <div className="animate-pulse bg-gray-700 rounded-xl w-full h-64"></div>
+})
 const formSchema = z.object({
   name: z.string().min(2, { message: "Name must be at least 2 characters." }),
   usn: z

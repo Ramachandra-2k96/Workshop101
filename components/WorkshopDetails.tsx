@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import { useState, useEffect } from "react"
 import { Trophy, Star, Coffee, BookOpen, Clock, User, ArrowRight } from "lucide-react"
 import { useForm } from "react-hook-form"
