@@ -285,7 +285,7 @@ const WorkshopDetails = () => {
           </motion.div>
         </div>
 
-        {/* Expert Section */}
+        {/* Expert Section
         <motion.div 
           variants={staggerContainer}
           initial="hidden"
@@ -335,7 +335,7 @@ const WorkshopDetails = () => {
               </motion.div>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Schedule Section */}
         <motion.div 

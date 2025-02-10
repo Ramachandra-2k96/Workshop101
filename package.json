@@ -25,6 +25,7 @@
     "emailjs-com": "^3.2.0",
     "eslint": "8.40.0",
     "eslint-config-next": "13.4.1",
+    "exceljs": "^4.4.0",
     "framer-motion": "^12.4.1",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.474.0",

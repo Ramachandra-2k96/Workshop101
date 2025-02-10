@@ -29,7 +29,7 @@ export default function RiveButton() {
   const [timeLeft, setTimeLeft] = useState<number>(0);
 
   useEffect(() => {
-    const targetTime = new Date("2025-02-15T00:00:00").getTime();
+    const targetTime = new Date("2025-02-14T00:00:00").getTime();
     setTimeLeft(targetTime - new Date().getTime());
     
     const interval = setInterval(() => {

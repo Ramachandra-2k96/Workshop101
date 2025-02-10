@@ -49,9 +49,9 @@ const requirements = [
         lottieUrl: 'https://assets8.lottiefiles.com/packages/lf20_w51pcehl.json',
         items: [
             { text: "Intermediate Python programming", level: "Required" },
-            { text: "Basic understanding of APIs", level: "Required" },
-            { text: "Experience with Git version control", level: "Required" },
-            { text: "Familiarity with ML concepts", level: "Recommended" }
+            { text: "Basic understanding of APIs", level: "Optional" },
+            { text: "Experience with Git version control", level: "Recommended" },
+            { text: "Familiarity with ML concepts", level: "Optional" }
         ]
     },
     {
