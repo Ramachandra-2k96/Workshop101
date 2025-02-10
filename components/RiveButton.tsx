@@ -25,29 +25,45 @@ export default function RiveButton() {
     }
   }, [rive, isHoverInput]);
 
-  // Countdown Timer State
-  const [timeLeft, setTimeLeft] = useState<number>(0);
+  // Countdown Timer State with stable initialization
+  const [timeLeft, setTimeLeft] = useState<string>("Loading...");
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    const targetTime = new Date("2025-02-14T00:00:00").getTime();
-    setTimeLeft(targetTime - new Date().getTime());
+    setMounted(true);
     
+    const calculateTime = () => {
+      const targetTime = new Date("2025-02-14T00:00:00").getTime();
+      const now = new Date().getTime();
+      const difference = targetTime - now;
+
+      if (difference <= 0) {
+        return "00d 00h 00m 00s";
+      }
+
+      const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((difference / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((difference / (1000 * 60)) % 60);
+      const seconds = Math.floor((difference / 1000) % 60);
+
+      return `${days.toString().padStart(2, '0')}d ${hours.toString().padStart(2, '0')}h ${minutes.toString().padStart(2, '0')}m ${seconds.toString().padStart(2, '0')}s`;
+    };
+
+    // Initial calculation
+    setTimeLeft(calculateTime());
+
+    // Update every second
     const interval = setInterval(() => {
-      setTimeLeft(targetTime - new Date().getTime());
+      setTimeLeft(calculateTime());
     }, 1000);
 
     return () => clearInterval(interval);
   }, []);
 
-  const formatTime = (ms: number) => {
-    if (ms <= 0) return "00:00:00:00";
-    const days = Math.floor(ms / (1000 * 60 * 60 * 24));
-    const hours = Math.floor((ms / (1000 * 60 * 60)) % 24);
-    const minutes = Math.floor((ms / (1000 * 60)) % 60);
-    const seconds = Math.floor((ms / 1000) % 60);
-
-    return `${days}d ${hours}h ${minutes}m ${seconds}s`;
-  };
+  // Skip rendering until after mount to prevent hydration mismatch
+  if (!mounted) {
+    return null;
+  }
 
   return (
     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-center w-full max-w-5xl px-6">
@@ -81,9 +97,8 @@ export default function RiveButton() {
 
         {/* Countdown Timer */}
         <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-teal-300 animate-pulse">
-          {formatTime(timeLeft)}
+          {timeLeft}
         </div>
-
       </div>
 
       <div className="rive-button-container relative w-3/4 pt-[37.88%] mx-auto mt-12">

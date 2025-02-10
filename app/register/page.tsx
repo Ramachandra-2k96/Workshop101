@@ -222,6 +222,7 @@ const RegisterPage = () => {
               <ul className="list-disc list-inside space-y-2">
                 <li>Attend the entire workshop session</li>
                 <li>Allow usage of provided details for attendance</li>
+                <li>You will be awarded a certificate only after the successful submission of the project.</li>
                 <li>Follow the workshop&#39;s code of conduct</li>
                 <li>Notify cancellations 24 hours before the event</li>
               </ul>

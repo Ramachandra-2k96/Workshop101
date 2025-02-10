@@ -157,7 +157,7 @@ const AboutSection: React.FC = () => {
                         className="flex items-center justify-center mb-4"
                     >
                         <Sparkles className="w-8 h-8 text-[#FF3CBD] animate-pulse mr-2" />
-                        <span className="text-[#FF3CBD] font-semibold tracking-wider">
+                        <span id="about" className="text-[#FF3CBD] font-semibold tracking-wider">
                             EXPLORE THE FUTURE
                         </span>
                     </motion.div>
@@ -186,7 +186,7 @@ const AboutSection: React.FC = () => {
                                 scale: 1.05,
                                 transition: { duration: 0.3 },
                             }}
-                            className="group backdrop-blur-xl rounded-3xl p-8 bg-gray-900/40 border border-gray-800/50 hover:border-[#FF3CBD]/50 transition-all duration-500 relative overflow-hidden h-[300px]"
+                            className="group backdrop-blur-xl rounded-3xl bg-gray-900/40 border border-gray-800/50 hover:border-[#FF3CBD]/50 transition-all duration-500 relative overflow-hidden h-[400px] p-10"
                         >
                             <div className="absolute inset-0 opacity-0 group-hover:opacity-25 transition-opacity duration-500">
                                 <Suspense fallback={<div className="w-full h-full" />}>

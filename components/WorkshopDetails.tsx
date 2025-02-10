@@ -132,7 +132,7 @@ const WorkshopDetails = () => {
       time: "09:00 AM",
       title: "Introduction to LangChain",
       description: "Fundamentals, architecture, and core concepts",
-      duration: "2h",
+      duration: "1h45m",
       instructor: "Ramachandra Udupa",
       highlightColor: "text-[#FF3CBD]"
     },
@@ -146,17 +146,25 @@ const WorkshopDetails = () => {
     },
     {
       time: "12:30 PM",
-      title: "Networking Lunch Break",
-      description: "Connect with fellow developers",
-      duration: "1h",
+      title: "Lunch Break",
+      description: "",
+      duration: "40m",
       highlightColor: "text-[#34FFE9]"
     },
     {
-      time: "01:30 PM",
+      time: "01:10 PM",
       title: "Hands-on Project Workshop",
       description: "Build a production-ready LangChain application",
       duration: "3h",
       instructor: "Ramachandra Udupa",
+      highlightColor: "text-[#FF3CBD]"
+    },
+    {
+      time: "04:10 PM",
+      title: "End of Workshop",
+      description: "Q&A, feedback, and closing remarks",
+      duration: "10m",
+      instructor: "",
       highlightColor: "text-[#FF3CBD]"
     }
   ];
@@ -182,8 +190,8 @@ const WorkshopDetails = () => {
     },
     {
       icon: Star,
-      title: "Expert Guidance",
-      description: "Learn from industry leaders",
+      title: "Guidance",
+      description: "Learn from Peers",
       gradient: "from-[#5634FF] to-[#34FFE9]"
     },
     {
@@ -242,7 +250,7 @@ const WorkshopDetails = () => {
           <div 
             className="flex items-center justify-center mb-4"
           >
-            <BookOpen className="w-6 h-6 md:w-8 md:h-8 text-[#FF3CBD] animate-pulse mr-2" />
+            <BookOpen id = "schedule" className="w-6 h-6 md:w-8 md:h-8 text-[#FF3CBD] animate-pulse mr-2" />
             <span className="text-[#FF3CBD] text-sm md:text-base font-semibold tracking-wider">WORKSHOP DETAILS</span>
           </div>
           
@@ -424,6 +432,7 @@ const WorkshopDetails = () => {
               className="group bg-gradient-to-r from-[#FF3CBD] via-[#5634FF] to-[#34FFE9] text-white px-8 py-4 rounded-full font-semibold text-lg relative overflow-hidden"
             >
               <motion.span 
+                id = "register"
                 className="relative z-10 flex items-center gap-2"
                 whileHover={{ x: 5 }}
               >
