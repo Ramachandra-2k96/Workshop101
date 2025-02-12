@@ -89,7 +89,7 @@ export default function RiveButton() {
         </div>
 
         <p className="text-lg md:text-xl lg:text-2xl max-w-2xl mx-auto animate-slide-up font-medium text-gray-200">
-          Where autonomous intelligence shapes tomorrow's possibilities
+          Where autonomous intelligence shapes tomorrow&#39;s possibilities
         </p>
 
         {/* Redesigned Countdown Timer */}
