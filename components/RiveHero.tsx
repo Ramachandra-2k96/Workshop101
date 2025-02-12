@@ -128,8 +128,8 @@ export default function RiveHero() {
     if (!numX || !numY) {
       return;
     }
-    const maxWidth = window.innerWidth +300;
-    const maxHeight = window.innerHeight +300;
+    const maxWidth = window.innerWidth;
+    const maxHeight = window.innerHeight;
     numX.value = (e.clientX / maxWidth) * 100;
     numY.value = 100 - (e.clientY / maxHeight) * 100;
   };
