@@ -37,7 +37,7 @@ export default function RiveButton() {
     setMounted(true);
 
     const calculateTime = () => {
-      const targetTime = new Date("2025-02-14T00:00:00").getTime();
+      const targetTime = new Date("2025-02-20T00:00:00").getTime();
       const now = new Date().getTime();
       const difference = targetTime - now;
 
