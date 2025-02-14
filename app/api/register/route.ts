@@ -82,8 +82,8 @@ export async function POST(request: Request) {
           <div style="background-color:#e8f4f8; padding:15px; border-radius:5px; margin:15px 0;">
             <h3 style="color:#2c3e50;">🗓️ Event Details</h3>
             <ul style="color:#34495e;">
-              <li>Date: February 14th, 2025</li>
-              <li>Time: 9:00 AM - 4:00 PM</li>
+              <li>Date: February 20th, 2025</li>
+              <li>Time: 9:00 AM - 4:30 PM</li>
               <li>Venue: CAED LAB, 1st Floor, Admin Block</li>
               <li>Website: <a href="https://langchain-workshop.vercel.app" style="color:#3498db;">langchain-workshop.vercel.app</a></li>
             </ul>
