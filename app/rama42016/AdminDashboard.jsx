@@ -5,8 +5,20 @@ import useSWR from 'swr';
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
 
+// A full-screen loading component
+function LoadingScreen() {
+  return (
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
+      <div className="flex flex-col items-center">
+        <div className="w-16 h-16 border-4 border-blue-500 border-t-transparent rounded-full animate-spin mb-4"></div>
+        <p className="text-xl font-semibold text-gray-700">Loading...</p>
+      </div>
+    </div>
+  );
+}
+
 export default function AdminDashboard() {
-  // Always call hooks at the top.
+  // Call all hooks at the top.
   const { data, error } = useSWR('/api/participants', fetcher, {
     refreshInterval: 5000,
   });
@@ -14,11 +26,10 @@ export default function AdminDashboard() {
   const [selectedYear, setSelectedYear] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
 
-  // Conditional rendering after hooks have been called.
+  // Early returns after hooks are called.
   if (error)
     return <div className="text-center py-10">Error loading data.</div>;
-  if (!data)
-    return <div className="text-center py-10">Loading...</div>;
+  if (!data) return <LoadingScreen />;
 
   const capacity = 60;
   const participants = data.participants || [];
