@@ -20,7 +20,7 @@ function LoadingScreen() {
 export default function AdminDashboard() {
   // Call all hooks at the top.
   const { data, error } = useSWR('/api/participants', fetcher, {
-    refreshInterval: 5000,
+    refreshInterval: 55000,
   });
   const [selectedDepartment, setSelectedDepartment] = useState('all');
   const [selectedYear, setSelectedYear] = useState('all');
